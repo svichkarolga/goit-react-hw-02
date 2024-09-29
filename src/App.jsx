@@ -11,19 +11,19 @@ function App() {
     bad: 0,
   });
 
-  const onLeaveFeedback = (option) => {
-	setFeedback({
-		...feedback,
-		[option]: feedback[option] + 1
-	});
-};
+ const updateFeedback = (feedbackType) => {
+    setFeedback((prevState) => ({
+      ...prevState,
+      [feedbackType]: prevState[feedbackType] + 1,
+    }));
+  };
 
   
   return (
     <>
       <Description /> 
-      <Options />
-      <Feedback />
+      <Options updateFeedback={updateFeedback}/>
+      <Feedback good={feedback.good} neutral={feedback.neutral} bad={feedback.bad}/>
     </>
   )
 }
