@@ -1,0 +1,9 @@
+.box{
+    display: flex;
+    flex-direction: raw;
+    gap: 10px;
+}
+
+.button{
+    border: 1px solid;
+}
